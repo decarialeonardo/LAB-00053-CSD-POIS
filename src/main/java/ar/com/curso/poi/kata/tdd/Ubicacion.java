@@ -1,5 +1,9 @@
 package ar.com.curso.poi.kata.tdd;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Collections;
+
 public class Ubicacion {
     protected double latitud;
     protected double longitud;
@@ -30,5 +34,21 @@ public class Ubicacion {
 
     public double getLongitud() {
         return longitud;
+    }
+
+    public Poi encontrarPOIMasCercano(ArrayList<Poi> estacionesDeSubte) {
+
+        ArrayList<Double> distancias = new ArrayList<Double>();
+
+        Iterator<Poi> iterator = estacionesDeSubte.iterator();
+
+        while(iterator.hasNext()){
+            Poi poiActual = iterator.next();
+            Double distanciaActual = new Double(calcularDistanciaAUbicacion(poiActual));
+            distancias.add(distanciaActual);
+        }
+
+        Poi masCercano = estacionesDeSubte.get(distancias.indexOf(Collections.min(distancias)));
+        return masCercano;
     }
 }

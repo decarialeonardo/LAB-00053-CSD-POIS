@@ -9,4 +9,7 @@ public class Poi extends Ubicacion{
         this.nombre = nombre;
     }
 
+    public String getNombre() {
+        return this.nombre;
+    }
 }

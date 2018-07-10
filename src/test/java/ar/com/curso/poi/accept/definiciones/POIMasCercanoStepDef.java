@@ -3,6 +3,7 @@ package ar.com.curso.poi.accept.definiciones;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
+import org.junit.Ignore;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -11,6 +12,7 @@ import java.net.URL;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Ignore
 public class POIMasCercanoStepDef {
 
     private String url;
@@ -24,7 +26,7 @@ public class POIMasCercanoStepDef {
         port = System.getProperty("servlet.port", "8080");
         urlBase = "http://localhost:" + port + "/pois-app";
     }
-
+/*
     @Dado("que estoy en (.*) y (.*)")
     public void estoy_en_una_latitud_y_longitud(String latitud, String longitud){
         this.latitud = latitud;
@@ -49,4 +51,4 @@ public class POIMasCercanoStepDef {
         connection.connect();
         return new BufferedReader( new InputStreamReader( connection.getInputStream() ) ).readLine();
     }
-}
+*/}
