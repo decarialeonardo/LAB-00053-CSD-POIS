@@ -41,7 +41,7 @@ public class TallerPoiMasCercanoDef {
     @Dado("que estoy en (.*) y (.*)")
     public void estoy_en(String  latitud, String longitud){
         Double latitudDouble = Double.parseDouble(latitud);
-        Double longitudDouble = Double.parseDouble(longitud);
+        //Double longitudDouble = Double.parseDouble(longitud);
 
         estoyEn = new Ubicacion(latitudDouble, longitudDouble);
 
