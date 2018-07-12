@@ -3,6 +3,7 @@ package ar.com.curso.poi.accept.definiciones;
 import ar.com.curso.poi.kata.tdd.Poi;
 import ar.com.curso.poi.kata.tdd.Ubicacion;
 import ar.com.curso.poi.modelo.POI;
+import ar.com.curso.poi.servicios.TallerNegocioSubte;
 import cucumber.api.java.Before;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
@@ -22,19 +23,7 @@ public class TallerPoiMasCercanoDef {
 
     @Before
     public void setUp(){
-        Poi estPasco = new Poi("Pasco", -34.609385, -58.398355);
-        Poi estCongreso = new Poi("Congreso", -34.609167, -58.392370);
-        Poi estCallao = new Poi("Callao", -34.604184, -58.392323);
-        Poi estAlberti = new Poi("Alberti", -34.609667, -58.400734);
-        Poi estPlazaMiserere = new Poi("PlazaMiserere", -34.607877, -58.405979);
-
-        estacionesDeSubte = new ArrayList<Poi>();
-
-        estacionesDeSubte.add(estPasco);
-        estacionesDeSubte.add(estCongreso);
-        estacionesDeSubte.add(estCallao);
-        estacionesDeSubte.add(estAlberti);
-        estacionesDeSubte.add(estPlazaMiserere);
+        estacionesDeSubte = TallerNegocioSubte.getInstance().getPois();
     }
 
 

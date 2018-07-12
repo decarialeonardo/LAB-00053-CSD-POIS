@@ -15,6 +15,11 @@ public class Ubicacion {
         this.longitud = longitud;
     }
 
+    public Ubicacion(String latitud, String longitud){
+        this.latitud = Double.parseDouble(latitud);
+        this.longitud = Double.parseDouble(longitud);
+    }
+
     public double calcularDistanciaAUbicacion(Ubicacion puntoFin) {
         double dLat = Math.toRadians(puntoFin.latitud - this.latitud);
         double dLng = Math.toRadians(puntoFin.longitud - this.longitud);
