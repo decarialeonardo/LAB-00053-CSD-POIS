@@ -11,7 +11,7 @@ public class TallerNegocioSubte extends TallerNegocio{
     }
 
     private TallerNegocioSubte() {
-        super("estacionessubte");
+        super("estacionesSubte");
         crearPoisSubtes();
     }
 

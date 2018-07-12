@@ -1,14 +1,22 @@
 package ar.com.curso.poi.kata.tdd;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Collections;
 
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.PROPERTY)
 public class Ubicacion {
     protected double latitud;
     protected double longitud;
 
     public static final double RADIO_TIERRA = 6371; // en Km
+
+    public Ubicacion(){}
 
     public Ubicacion(double latitud, double longitud){
         this.latitud = latitud;
@@ -33,10 +41,12 @@ public class Ubicacion {
         return (double) Math.round(distancia * 100) / 100;
     }
 
+    @XmlElement
     public double getLatitud() {
         return latitud;
     }
 
+    @XmlElement
     public double getLongitud() {
         return longitud;
     }

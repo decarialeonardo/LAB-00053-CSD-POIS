@@ -14,10 +14,15 @@ import java.util.ArrayList;
 public class TallerServicioWeb {
 
     @GET
-    @Path("/poiMasCercano/{negocio}/{latitud}/{longitud}")
+    @Path("/test")
+    public String hola(){
+        return "Test";
+    }
+
+    @GET
+    @Path("/poiMasCercano/estacionesSubte/{latitud}/{longitud}")
     @Produces("application/xml")
-    public Poi obtenerPoiMasCercano(@PathParam("negocio") String negocio,
-                                    @PathParam("latitud") String latitud,
+    public Poi obtenerPoiMasCercano(@PathParam("latitud") String latitud,
                                     @PathParam("longitud")String longitud) {
 
         ArrayList<Poi> pois =  TallerNegocioSubte.getInstance().getPois();
